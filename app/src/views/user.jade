@@ -1,0 +1,34 @@
+
+.row
+  .col-md-8
+    h1
+      | User
+    hr
+.row
+  .col-md-6
+    .row
+      .col-md-11
+        form
+          .form-group
+            label
+              | Username
+            input.form-control(ng-model="username" placeholder="username")
+          .form-group
+            label
+              | Email
+            input.form-control(ng-model="email" placeholder="email")
+          .form-group
+            button.btn.btn-default(ng-click="addUser(username,email)")
+              | Add User
+  .col-md-4
+    ul.list-group
+      li.list-group-item(ng-repeat="user in users")
+        .form-group
+          b
+            [* user.username *]
+          &nbsp; &nbsp;
+          i
+            [* user.email *]
+          button.btn.btn-default.pull-right(ng-click="deleteUser(user)")
+            | Delete
+

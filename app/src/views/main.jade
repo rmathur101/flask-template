@@ -1,0 +1,13 @@
+.row
+  .col-md-12
+    h1.text-warning
+      | Velveeta
+    hr
+.row
+  .col-md-6
+    .form-group
+      input(type="text" ng-model="sourceSelected" typeahead="source as source.name for source in sources | filter:{name:$viewValue} | limitTo:12" class="form-control")
+.row
+  .col-md-6
+    h2(ng-show="sourceSelected.id")
+      | id: [*sourceSelected.id*]
